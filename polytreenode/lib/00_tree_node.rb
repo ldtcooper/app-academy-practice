@@ -6,15 +6,15 @@ class PolyTreeNode
   end
 
   def parent
-
+    @parent.dup
   end
 
   def children
-
+    @children.dup
   end
 
   def value
-
+    @value.dup
   end
 
   def parent=(p)
