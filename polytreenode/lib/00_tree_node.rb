@@ -27,5 +27,15 @@ class PolyTreeNode
     @parent.children << self unless node.nil?
   end
 
+  def add_child(node)
+    node.parent = self
+  end
+
+  def remove_child(node)
+    unless self.children.include?(node)
+      raise ArgumentError "node is not a child node!"
+    end 
+    node.parent = nil
+  end
 
 end
