@@ -22,13 +22,10 @@ class PolyTreeNode
   end
 
   def parent=(node)
-    if @parent.nil?
-      @parent = node
-      @parent.children << self unless node.nil?
-    else
-      @parent.children -= [self]
-      @parent = node
-      @parent.children << self unless node.nil?
-    end
+    @parent.children -= [self] unless @parent.nil?
+    @parent = node
+    @parent.children << self unless node.nil?
   end
+
+
 end
