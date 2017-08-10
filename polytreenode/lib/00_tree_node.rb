@@ -34,8 +34,16 @@ class PolyTreeNode
   def remove_child(node)
     unless self.children.include?(node)
       raise ArgumentError "node is not a child node!"
-    end 
+    end
     node.parent = nil
+  end
+
+  def bfs(target)
+
+  end
+
+  def dfs(target)
+
   end
 
 end
