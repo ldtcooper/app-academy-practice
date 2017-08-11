@@ -12,14 +12,15 @@ class MyStack
   end
 
   def peek
-
+    @store.last
   end
 
   def size
-
+    @store.length
   end
 
   def empty?
-
+    @store.empty?
   end
+
 end
