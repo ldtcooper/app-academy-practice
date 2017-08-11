@@ -4,11 +4,11 @@ class MyQueue
   end
 
   def enqueue(el)
-
+    @store.push(el)
   end
 
   def dequeue
-
+    @store.shift
   end
 
   def peek
