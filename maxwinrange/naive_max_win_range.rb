@@ -1,11 +1,7 @@
 def windowed_max_range(arr, win)
-  arr.each_cons(win).inject(0) do |acc, el|
+  arr.each_cons(win).inject do |acc, el|
     rng = el.max - el.min
-    if rng > acc
-      rng
-    else
-      acc
-    end
+    rng > acc ? rng : acc
   end
 end
 
