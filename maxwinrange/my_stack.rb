@@ -44,17 +44,3 @@ class MyStack
   end
 
 end
-
-m = MyStack.new
-m.push(3)
-p m.max
-p m.min
-m.push(1)
-p m.max
-p m.min
-m.push(2)
-p m.max
-p m.min
-m.push(4)
-p m.max
-p m.min

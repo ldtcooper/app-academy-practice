@@ -44,17 +44,3 @@ class MyQueue
   end
 
 end
-
-m = MyQueue.new
-m.enqueue(3)
-p m.max
-p m.min
-m.enqueue(1)
-p m.max
-p m.min
-m.enqueue(2)
-p m.max
-p m.min
-m.enqueue(4)
-p m.max
-p m.min
