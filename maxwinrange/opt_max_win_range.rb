@@ -1,5 +1,9 @@
-def windowed_max_range(arr, target)
+require_relative 'stackqueue'
 
+def windowed_max_range(arr, target)
+  arr.each do |el|
+    
+  end
 end
 
 # tests
