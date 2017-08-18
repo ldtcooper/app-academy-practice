@@ -101,14 +101,13 @@ class SQLObject
     cols = self.class.columns
     col_names = cols.join(", ")
     q_marks = (["?"] * cols.length).join(", ")
-    id_plus_one = self.class.all.last.id + 1
     DBConnection.execute(<<-SQL, attribute_values)
       INSERT INTO
         #{self.class.table_name} (#{col_names})
       VALUES
         (#{q_marks})
     SQL
-    self.id = id_plus_one
+    self.id = DBConnection.last_insert_row_id
   end
 
   def update
