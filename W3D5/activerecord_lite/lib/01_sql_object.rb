@@ -47,11 +47,21 @@ class SQLObject
   end
 
   def self.all
-    # ...
+    all_items = DBConnection.execute(<<-SQL)
+      SELECT
+        *
+      FROM
+        #{table_name}
+    SQL
+    self.parse_all(all_items)
   end
 
   def self.parse_all(results)
-    # ...
+    objects_arr = []
+    results.each do |hsh|
+      objects_arr << self.new(hsh)
+    end
+    objects_arr
   end
 
   def self.find(id)
@@ -61,7 +71,9 @@ class SQLObject
   def initialize(params = {})
     self.class.columns
     params.each do |k, v|
-      raise "unknown attribute '#{k}'" unless self.class.columns.include?(k)
+      unless self.class.columns.include?(k.to_sym)
+        raise "unknown attribute '#{k}'"
+      end
       self.send("#{k}=".to_sym, v)
     end
   end
