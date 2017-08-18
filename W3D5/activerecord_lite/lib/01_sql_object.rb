@@ -12,11 +12,16 @@ class SQLObject
   end
 
   def self.table_name=(table_name)
-    # ...
+    @table_name = table_name
   end
 
   def self.table_name
-    # ...
+    if @table_name.nil?
+      class_name = self.to_s
+      class_name_arr = class_name.split(/(?=[A-Z])/)
+      @table_name = "#{class_name_arr.join('_').downcase}s"
+    end
+    @table_name
   end
 
   def self.all
