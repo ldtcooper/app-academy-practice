@@ -17,6 +17,15 @@ ul li a, figcaption a {
   color: inherit;
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+header ul {
+  display: flex;
+}
+
 header > img {
   width: 100px;
 }
