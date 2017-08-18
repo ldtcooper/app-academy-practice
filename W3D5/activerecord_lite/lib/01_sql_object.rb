@@ -124,6 +124,10 @@ class SQLObject
   end
 
   def save
-    # ...
+    if self.id.nil?
+      self.insert
+    else
+      self.update
+    end 
   end
 end
