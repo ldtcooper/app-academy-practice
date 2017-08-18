@@ -19,7 +19,6 @@ ul li a, figcaption a {
 
 header > img {
   width: 100px;
-  float: left;
 }
 
 .ingredients-list {
@@ -67,11 +66,9 @@ h2 + .user_review {
 }
 
 nav {
-    float: right;
 }
 
 nav ul li {
-    display: inline-block;
 }
 
 nav ul li a {
@@ -109,4 +106,3 @@ textarea {
 label {
     display: block;
 }
-
