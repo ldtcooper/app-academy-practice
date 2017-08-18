@@ -12,10 +12,22 @@ class SQLObject
       FROM
         #{table}
     SQL
-    .first.map(&:to_sym)
+      .first.map(&:to_sym)
   end
 
   def self.finalize!
+    columns.each do |col|
+
+      #getter
+      define_method(col) do
+        attributes[col]
+      end
+
+      #setter
+      define_method("#{col}=") do |new_val|
+        attributes[col] = new_val
+      end
+    end
   end
 
   def self.table_name=(table_name)
@@ -48,7 +60,8 @@ class SQLObject
   end
 
   def attributes
-    # ...
+    @attributes ||= {}
+    @attributes
   end
 
   def attribute_values
