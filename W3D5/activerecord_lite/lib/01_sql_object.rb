@@ -128,6 +128,6 @@ class SQLObject
       self.insert
     else
       self.update
-    end 
+    end
   end
 end
