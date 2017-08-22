@@ -14,7 +14,7 @@ class ArtworkController < ApplicationController
   end
 
   def show
-    @artwork = Artwork.find_by(artwork_id)
+    @artwork = Artwork.find_by(id: artwork_id)
     if @artwork
       render json: @artwork
     else
@@ -23,12 +23,19 @@ class ArtworkController < ApplicationController
   end
 
   def update
-
+    @artwork = Artwork.find_by(id: artwork_id)
+    if @artwork
+      @artwork.update_attributes(artwork_params)
+      render json: @artwork
+    else
+      render json: @artwork.erros.full_messages, status: :unprocessable_entity
+    end
   end
 
-
   def destroy
-
+    @artwork = Artwork.find_by(id: artist_id)
+    @user.delete
+    render json: @user
   end
 
   private
