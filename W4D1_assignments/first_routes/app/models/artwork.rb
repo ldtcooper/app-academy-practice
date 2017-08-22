@@ -9,7 +9,7 @@
 #
 
 class Artwork < ApplicationRecord
-  validates :title, uniqueness: { scope: :user, message: "User can only have one artwork of a certain name" }
+  validates :title, uniqueness: { scope: :artist_id, message: "User can only have one artwork of a certain name" }
 
   belongs_to :artist,
   primary_key: :id,

@@ -6,3 +6,4 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 10.times { User.create(username: Faker::Ancient.hero) }
+20.times { Artwork.create(title: Faker::Hipster.sentence(rand(1..4)), image_url: Faker::Placeholdit.image, artist_id: rand(13..16))}
