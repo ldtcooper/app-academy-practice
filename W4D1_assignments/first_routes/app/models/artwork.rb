@@ -14,5 +14,6 @@ class Artwork < ApplicationRecord
   belongs_to :artist,
   primary_key: :id,
   foreign_key: :aritst_id,
-  class_name: :User
+  class_name: :User,
+  dependent: :destroy
 end
