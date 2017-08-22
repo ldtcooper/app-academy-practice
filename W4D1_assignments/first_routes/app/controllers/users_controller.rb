@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(user_id)
+    @user = User.find_by(id: user_id)
     if @user
       render json: @user
     else
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(user_id)
+    @user = User.find_by(id: user_id)
     if @user
       user.update_attributes(user_params)
       render json: @user
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(user_id)
+    @user = User.find_by(id: user_id)
     @user.delete
     render json: @user
   end
