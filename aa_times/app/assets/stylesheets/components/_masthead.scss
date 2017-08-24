@@ -8,7 +8,7 @@
 
 .language-nav {
 	position: absolute;
-	top: -15px;
+	top: -5px;
 	left: calc(50% - (177.78px/2));
 	background: white;
 	border: 1px solid $light-gray;
@@ -25,8 +25,16 @@
 	color: $dark-gray;
 }
 
+.language-nav a:hover{
+	text-decoration: underline;
+}
+
 .language-nav ul {
 	display: flex;
+}
+
+.language-nav ul li:first-child{
+	font-weight: bold;
 }
 
 .logo {
@@ -44,23 +52,26 @@
 
 .masthead-links li {
 	margin-left: 10px;
-	border-right: 1px solid $light-gray;
 }
 
 .masthead-links button {
 	background: none;
-	padding: 0px;
+	padding: 2px;
 	color: #000;
 	font-weight: normal;
 	border: none;
+	text-transform: capitalize;
+	display: inline-block;
 }
 
-.masthead-links button:hover {
+.masthead-links button a:hover {
 	background-color: $lightest-gray;
+	text-decoration: underline;
 }
+
 
 .masthead-links a,
-.masthead-links button, 
+.masthead-links button,
 .masthead-links time {
 	margin-right: 10px;
 }

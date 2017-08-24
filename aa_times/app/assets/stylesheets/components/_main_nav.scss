@@ -1,34 +1,48 @@
 .main-nav {
-
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  justify-content: space-between;
 }
 
 .left-nav > ul,
 .right-nav > ul {
-
+  display: flex;
+  align-items: flex-start;
+  font-size: 11px;
 }
 
 .left-nav > ul > li {
-
+  text-transform: uppercase;
+  padding: 5px;
+  font-family: $sans-serif;
+  font-size: 11px;
+  font-weight: bold;
 }
 
 .right-nav > ul > li {
+  padding: 1px;
+  font-family: $sans-serif;
 
 }
 
 .right-nav > ul > li:last-of-type {
-
+  padding-top: 5px;
+  display: inline-block;
 }
 
 .left-nav > ul > li:hover,
 .right-nav > ul > li:last-of-type:hover {
-
+  background: $lightest-gray;
+  display: inline-block;
 }
 
 .left-nav span {
-
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 
 .right-nav i {
-
+  font-size: 16px;
 }
