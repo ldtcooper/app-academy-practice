@@ -5,3 +5,25 @@
 	border-bottom: 2px solid black;
 	position: relative;
 }
+
+.section-nav ul {
+	display: flex;
+}
+
+.section-nav ul li{
+	padding: 5px;
+}
+
+.section-nav ul li a{
+	font-family: $sans-serif;
+	font-size: 10px;
+}
+
+.section-nav ul li:hover a{
+	background: $gray;
+}
+
+.section-nav ul li:last-child a:hover{
+	text-decoration: underline;
+	background: white;
+}
