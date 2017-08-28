@@ -41,5 +41,16 @@ RSpec.describe SessionsController, type: :controller do
     end
   end
 
-
+  describe 'DELETE#destroy' do
+    before(:each) do
+      get :create, params: { user: {username: "JohnDoe", password: "password" } }
+      @session_token = User.find_by(username: "JohnDoe").session_token
+    end
+    
+    xit "signs user out" do
+      get :delete
+      john = User.find_by(username: "JohnDoe")
+      expect(@session_token).to_not eq(john.session_token)
+    end
+  end
 end
