@@ -46,9 +46,10 @@ RSpec.describe SessionsController, type: :controller do
       get :create, params: { user: {username: "JohnDoe", password: "password" } }
       @session_token = User.find_by(username: "JohnDoe").session_token
     end
-    
+
     xit "signs user out" do
       get :delete
+      expect(session[:session_token]).to be(nil)
       john = User.find_by(username: "JohnDoe")
       expect(@session_token).to_not eq(john.session_token)
     end
