@@ -26,20 +26,20 @@ RSpec.describe User, type: :model do
   describe 'password encryption' do
     before (:each) do
       User.create!(username: "JohnDoe", password: "password")
-      user = User.find_by(username: "JohnDoe")
+      @user = User.find_by(username: "JohnDoe")
     end
     xit 'does not save passwords as plain text' do
-      expect(user.password).to_not be("password")
+      expect(@user.password).to_not be("password")
     end
 
     xit "assigns session token" do
-      expect(user.session_token).to_not be(nil)
+      expect(@user.session_token).to_not be(nil)
     end
   end
 
   describe '::find_by_credentials' do
     xit "finds a user with correct credentials" do
-      expect(User.find_by_credentials("JohnDoe", "password")).to be(user)
+      expect(User.find_by_credentials("JohnDoe", "password")).to be(@user)
     end
 
     xit "returns nil for incorrect credentials" do
