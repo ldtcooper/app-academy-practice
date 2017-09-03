@@ -24,12 +24,12 @@ RSpec.describe UsersController, type: :controller do
     context "with invalid params" do
       it "fails if field not filled in" do
         get :create, params: { user: { username: "", password: "password" } }
-        expect flash[:errors].to be_present
+        expect(flash[:errors]).to be_present
       end
 
       it "fails if password too short" do
         get :create, params: { user: { username: "JohnDoe", password: "12345" } }
-        expect flash[:errors].to be_present
+        expect(flash[:errors]).to be_present
       end
     end
   end

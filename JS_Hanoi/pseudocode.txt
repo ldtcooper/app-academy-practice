@@ -1,0 +1,9 @@
+Start a game with three pegs and three disks on one peg
+Take input from player: which peg to take from and which to move it to
+  Check if the from peg is full
+  Check if the to peg's top disk is larger than the moving disk
+  Reset if above not true
+Move disk
+Check if second or third pegs are full
+  if true: game is over
+  else: begin anew
