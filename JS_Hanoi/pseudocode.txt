@@ -7,3 +7,8 @@ Move disk
 Check if second or third pegs are full
   if true: game is over
   else: begin anew
+
+Move conditions:
+  - To and from indicies between 0-2
+  - From peg not empty
+  - Top moving disk smaller than top disk of to peg

@@ -6,8 +6,8 @@ const reader = readline.createInterface({
 });
 
 class Game {
-  constructor() {
-    this.pegs = [[3, 2, 1], [], []];
+  constructor(pegs = [[3, 2, 1], [], []]) {
+    this.pegs = pegs;
   }
 
   promptMove(callback) {
@@ -22,6 +22,11 @@ class Game {
       });
     });
   }
+
+  isValidMove(from, to) {
+
+  }
 }
 
 var a = new Game();
+a.promptMove(a.isValidMove);
